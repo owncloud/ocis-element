@@ -1,8 +1,8 @@
 ---
 repository:
   name: ocis-element
-  description: ':atom_symbol: ownCloud Infinite Scale Stack'
-  homepage: https://owncloud.github.io/ocis/
+  description: ':atom_symbol: ownCloud element Integration'
+  homepage: https://owncloud.github.io/extensions/element/
   topics: ocis
 
   private: false
