@@ -1,0 +1,13 @@
+*/coverage.out
+
+*/bin
+*/dist
+/hugo
+*.key
+*crt
+node_modules/
+*/assets
+
+.idea
+
+*/yarn-error.log
