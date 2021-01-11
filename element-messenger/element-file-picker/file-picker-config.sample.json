@@ -1,0 +1,9 @@
+{
+  "server": "https://owncloud-host/",
+  "auth" : {
+    "clientId": "<OAuth2 Client ID>",
+    "url": "https://owncloud-host/index.php/apps/oauth2/api/v1/token",
+    "authUrl": "https://owncloud-host/index.php/apps/oauth2/authorize",
+    "redirectUri": "https://phoenix-host/apps/element-messenger/element-file-picker/oidc-callback.html"
+  }
+}

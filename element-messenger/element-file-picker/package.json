@@ -1,0 +1,16 @@
+{
+  "name": "element-file-picker",
+  "version": "0.1",
+  "description": "Element Messenger basic integration: file picker",
+  "scripts": {
+    "lint": "eslint src/**/*.vue src/**/*.js --color --global requirejs --global require",
+    "lint-fix": "eslint src/**/*.vue src/**/*.js --color --global requirejs --global require --fix",
+    "watch": "webpack --progress --colors --watch --mode development --config webpack.dev.js",
+    "build": "webpack -p --config webpack.common.js"
+  },
+  "author": "Lars Luz",
+  "devDependencies": {
+    "@ownclouders/file-picker": "^0.1.0"
+  },
+  "dependencies": {}
+}

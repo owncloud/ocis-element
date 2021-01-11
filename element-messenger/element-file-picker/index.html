@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ownCloud File Picker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="IE=11">
+    <link rel="manifest" href="manifest.json">
+    <script src="element-file-picker.bundle.js"></script>
+    <style>
+        #copy-success {
+            display: none;
+            border: 1px solid green;
+            margin-bottom: 16px;
+            padding: 15px;
+            font-family: Source Sans Pro, sans-serif;
+            color: green;
+        }
+
+        #copy-success a {
+            font-weight: bold;
+            text-decoration: underline;
+            color: green;
+        }
+
+        #share-result {
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="copy-success">
+    Your share links have been successfully prepared. <a href="#" onclick="copyLinks()">Click to copy</a>
+</div>
+<file-picker config-location="file-picker-config.json" id="file-picker" variation="resource"></file-picker>
+<textarea type="text" id="share-result"></textarea>
+<script>
+    function copyLinks() {
+        var copyText = document.querySelector("#share-result");
+        copyText.select();
+        document.execCommand("copy");
+        document.getElementById('copy-success').style.display ="none";
+    }
+
+    const item = document.getElementById('file-picker')
+
+    item.addEventListener('selectResources', event => {
+        const resources = event.detail[0]
+        // Currently the App does not expose the client in a usual way.
+        // That's why we are directly accessing it.
+        // TODO: Change in future versions
+        const client = Vue.prototype.$client
+        let counter = 0
+        const urls = []
+        for (var resid in resources) {
+            client.shares.shareFileWithLink(resources[resid].path).then(result => {
+                counter++
+                if (result && result.shareInfo && result.shareInfo.url) {
+                    urls.push(result.shareInfo.url)
+                    if (counter === resources.length) {
+                        document.getElementById('share-result').value = "";
+                        for (var urlid in urls) {
+                            document.getElementById('share-result').value += urls[urlid] + '\n'
+                        }
+                        document.getElementById('copy-success').style.display = "block";
+                    }
+                }
+            })
+        }
+    })
+</script>
+</body>
+</html>
