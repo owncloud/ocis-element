@@ -11,9 +11,11 @@
 <script>
 export default {
   name: 'ElementFrame',
-  data: () => ({
-    configuration: window.phoenixConfig || []
-  })
+  computed: {
+    configuration() {
+      return this.$store.state.config
+    }
+  }
 }
 </script>
 <style scoped>
