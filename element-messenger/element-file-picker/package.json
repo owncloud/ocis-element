@@ -1,16 +1,18 @@
 {
   "name": "element-file-picker",
   "version": "0.1",
+  "private": true,
   "description": "Element Messenger basic integration: file picker",
   "scripts": {
     "lint": "eslint src/**/*.vue src/**/*.js --color --global requirejs --global require",
     "lint-fix": "eslint src/**/*.vue src/**/*.js --color --global requirejs --global require --fix",
-    "watch": "webpack --progress --colors --watch --mode development --config webpack.dev.js",
-    "build": "webpack -p --config webpack.common.js"
+    "build": "rollup -c"
   },
   "author": "Lars Luz",
   "devDependencies": {
-    "@ownclouders/file-picker": "^0.1.0"
-  },
-  "dependencies": {}
+    "@ownclouders/file-picker": "^0.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-uglify": "^6.0.4"
+  }
 }

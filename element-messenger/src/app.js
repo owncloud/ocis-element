@@ -1,4 +1,4 @@
-import translationsJson from '../l10n/translations'
+import translationsJson from 'l10n/translations'
 
 import ElementFrame from './ElementFrame.vue'
 
