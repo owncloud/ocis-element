@@ -7,6 +7,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import serve from 'rollup-plugin-serve'
 import { uglify } from "rollup-plugin-uglify"
 import json from "@rollup/plugin-json"
+import globals from 'rollup-plugin-node-globals'
 
 const dev = process.env.SERVER === 'true'
 
@@ -48,5 +49,6 @@ export default {
       contentBase: ['dist']
     }),
     !dev && uglify(),
+    globals()
   ]
 }
