@@ -45,8 +45,8 @@ if (widgetId) {
               let text = "";
               let htmlText = "";
               for (var i in shareResults) {
-                text += 'Download ' + shareResults[i].shareInfo.file_target.replace(/^\//g, '') + ': ' + shareResults[i].shareInfo.url + "\n";
-                htmlText += '<a href="' + shareResults[i].shareInfo.url + '">Download ' + shareResults[i].shareInfo.file_target.replace(/^\//g, '') + ' from owncloud</a><br>';
+                text += 'Open ' + shareResults[i].shareInfo.file_target.replace(/^\//g, '') + ': ' + shareResults[i].shareInfo.url + "\n";
+                htmlText += '<a href="' + shareResults[i].shareInfo.url + '">Open ' + shareResults[i].shareInfo.file_target.replace(/^\//g, '') + ' in ownCloud</a><br>';
               }
               api.sendRoomEvent('m.room.message', {
                 "body": text,
