@@ -2,7 +2,7 @@
 
 Element is a client solution for the popular Matrix chat protocol.
 This extension has two parts, the first one lets you embed a self-hosted Elements client into your ownCloud environment.
-The second is a widget for usage within Elements, that allows to directly share files with within chat rooms.
+The second is an Elements widget, which allows to directly share files inside chat rooms.
 
 ## Building
 
