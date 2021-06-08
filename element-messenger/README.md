@@ -34,7 +34,7 @@ To deploy the app just deploy the contents of the top level dist folder in your 
 Please deploy the contents (the widget) of the dist folder within the element-file-picker folder on your server.
 You can deploy it anywhere you like. After deployment you will need to create a file-picker.config.json file if you want to use the file picker widget in Matrix.
 Look here for further information: https://owncloud.github.io/integration/file_picker/installation/
-Please put the finished as file-picker-config.json in the same folder as the widget.
+Please, put the finished config file as file-picker-config.json in the same folder as the widget.
 You also can look at the file-picker-config.sample.json file in the element-file-picker folder for inspiration.
 
 If your Element Web App or Integration Server runs under a different host you might need to allow that host to embed widgets from your host.
