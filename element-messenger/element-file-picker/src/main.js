@@ -29,7 +29,7 @@ if (widgetId) {
       }
     }).$mount('#file-picker');
 
-    instance.$children[0].selectResources = function(resources) {
+    instance.$children[0].select = function(resources) {
       // Currently the App does not expose the client in a usual way.
       // That's why we are directly accessing it.
       // TODO: Change in future versions
