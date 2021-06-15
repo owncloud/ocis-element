@@ -1,32 +1,33 @@
 {
   "name": "element-messenger",
   "version": "0.1",
+  "private": true,
   "description": "Element Messenger basic integration",
   "scripts": {
     "lint": "eslint src/**/*.vue src/**/*.js --color --global requirejs --global require",
     "lint-fix": "eslint src/**/*.vue src/**/*.js --color --global requirejs --global require --fix",
     "watch": "webpack --progress --colors --watch --mode development --config webpack.dev.js",
-    "build": "cd element-file-picker; webpack -p --config webpack.common.js; cd ..; webpack -p --config webpack.common.js",
+    "build": "cd element-file-picker; yarn build; cd ..; rollup -c",
     "postinstall": "cd element-file-picker; yarn install"
   },
   "author": "Lars Luz",
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
-    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/polyfill": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
-    "babel-loader": "^8.0.6",
-    "babel-runtime": "^6.26.0",
-    "copy-webpack-plugin": "^6.3.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@vue/compiler-sfc": "^3.0.9",
     "css-loader": "^3.1.0",
-    "vue-loader": "^15.7.1",
+    "postcss": "^8.2.8",
+    "rollup": "^2.41.4",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "rollup-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.6.10",
-    "vuex": "3.1.3",
-    "webpack": "^4.36.1",
-    "webpack-cli": "^3.3.8",
-    "webpack-merge": "^4.2.2"
+    "vuex": "3.1.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "rollup-plugin-node-globals": "^1.4.0"
+  }
 }

@@ -1,27 +1,14 @@
-# http://editorconfig.org
-
 root = true
 
 [*]
-charset = utf-8
 insert_final_newline = true
+charset = utf-8
 trim_trailing_whitespace = true
+end_of_line = lf
 
-[Makefile]
-indent_style = tab
-indent_size = 4
-
-[*.go]
-indent_style = tab
-indent_size = 4
-
-[*.starlark]
+[*.{js,json,vue,feature}]
 indent_style = space
 indent_size = 2
 
-[*.yml]
-indent_style = space
-indent_size = 2
-
-[*.md]
-trim_trailing_whitespace = true
+[*.{md,markdown}]
+trim_trailing_whitespace = false

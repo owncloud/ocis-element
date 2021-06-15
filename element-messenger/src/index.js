@@ -1,6 +1,5 @@
 import translationsJson from '../l10n/translations'
-
-import ElementFrame from './ElementFrame.vue'
+import App from './App.vue'
 
 // just a dummy function to trick gettext tools
 function $gettext(msg) {
@@ -12,7 +11,7 @@ const routes = [
     name: 'element-messenger',
     path: '',
     components: {
-      app: ElementFrame
+      app: App
     }
   }
 ]
@@ -30,15 +29,15 @@ const navItems = [
     iconMaterial: appInfo.icon,
     route: {
       name: 'element-messenger',
-      path: '/element-messenger'
+      path: `/${appInfo.id}`
     }
   }
 ]
 
 const translations = translationsJson
-export default define({
+export default {
   appInfo,
   routes,
   navItems,
   translations
-})
+}
